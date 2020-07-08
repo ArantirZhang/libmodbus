@@ -27,3 +27,4 @@ set_target_properties(modbus PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ${MODBUS_I
 file( COPY ${MODBUS_DIR}/src/modbus-private.h DESTINATION ${MODBUS_INCLUDES}/modbus )
 file( COPY ${MODBUS_DIR}/src/modbus-rtu-private.h DESTINATION ${MODBUS_INCLUDES}/modbus )
 file( COPY ${MODBUS_DIR}/src/modbus-tcp-private.h DESTINATION ${MODBUS_INCLUDES}/modbus )
+file( COPY ${MODBUS_BIN}/lib DESTINATION ${CMAKE_BINARY_DIR} )
