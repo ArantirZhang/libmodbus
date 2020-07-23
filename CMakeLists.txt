@@ -16,6 +16,7 @@ ExternalProject_Add(
   CONFIGURE_COMMAND ${MODBUS_DIR}/configure --host=${CONFIG_HOST} --target=${CONFIG_HOST} --srcdir=${MODBUS_DIR} --prefix=${MODBUS_BIN} --enable-static=yes && cp ${MODBUS_BIN}/src/libmodbus-build/config.h ${MODBUS_INCLUDES}
   BUILD_COMMAND make -j8
   BUILD_BYPRODUCTS ${MODBUS_STATIC_LIB}
+  cp -rf ${MODBUS_BIN}/lib/* ${CMAKE_BINARY_DIR}/lib
   )
 
 add_library(modbus STATIC IMPORTED GLOBAL)
@@ -27,4 +28,3 @@ set_target_properties(modbus PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ${MODBUS_I
 file( COPY ${MODBUS_DIR}/src/modbus-private.h DESTINATION ${MODBUS_INCLUDES}/modbus )
 file( COPY ${MODBUS_DIR}/src/modbus-rtu-private.h DESTINATION ${MODBUS_INCLUDES}/modbus )
 file( COPY ${MODBUS_DIR}/src/modbus-tcp-private.h DESTINATION ${MODBUS_INCLUDES}/modbus )
-file( COPY ${MODBUS_BIN}/lib DESTINATION ${CMAKE_BINARY_DIR} )
