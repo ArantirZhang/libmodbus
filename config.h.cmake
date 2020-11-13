@@ -31,7 +31,7 @@
 #cmakedefine HAVE_STRERROR
 #cmakedefine HAVE_STRLCPY
 
-#cmakedefine HAVE_TIOCRS485
-#cmakedefine HAVE_TIOCM_RTS
+#cmakedefine HAVE_DECL_TIOCSRS485 1
+#cmakedefine HAVE_DECL_TIOCM_RTS 1
 
 #endif

@@ -39,8 +39,8 @@ check_function_exists(strerror HAVE_STRERROR)
 check_function_exists(strlcpy HAVE_STRLCPY)
 
 include(CheckSymbolExists)
-check_symbol_exists(TIOCSRS485 sys/ioctl.h HAVE_TIOCRS485)
-check_symbol_exists(TIOCM_RTS sys/ioctl.h HAVE_TIOCM_RTS)
+check_symbol_exists(TIOCSRS485 sys/ioctl.h HAVE_DECL_TIOCSRS485)
+check_symbol_exists(TIOCM_RTS sys/ioctl.h HAVE_DECL_TIOCM_RTS)
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 

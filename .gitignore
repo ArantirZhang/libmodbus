@@ -43,3 +43,4 @@ tests/stamp-h2
 doc/*.html
 doc/*.3
 doc/*.7
+.DS_Store
