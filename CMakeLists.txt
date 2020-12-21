@@ -68,4 +68,11 @@ set(MODBUS_PUBLIC_HEADERS
 
 add_library(modbus ${MODBUS_SOURCES})
 
+if (MSVC)
+  if (BUILD_SHARED_LIBS)
+    # enable flags for dll building
+    target_compile_options(modbus PRIVATE "-DDLLBUILD")
+  endif()
+endif()
+
 target_include_directories(modbus PUBLIC ${CMAKE_CURRENT_BINARY_DIR} ${MODBUS_SRC_DIR})

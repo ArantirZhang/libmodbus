@@ -13,12 +13,17 @@
 #else
 # include "stdint.h"
 # include <time.h>
-typedef int ssize_t;
 #endif
 #include <sys/types.h>
 #include <config.h>
 
 #include "modbus.h"
+
+#if !defined(_SSIZE_T_) && !defined(_SSIZE_T_DEFINED)
+typedef intptr_t ssize_t;
+# define _SSIZE_T_
+# define _SSIZE_T_DEFINED
+#endif
 
 MODBUS_BEGIN_DECLS
 

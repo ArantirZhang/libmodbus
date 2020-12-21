@@ -20,16 +20,16 @@
 
 #include "modbus-version.h"
 
-#if defined(_MSC_VER)
-# if defined(DLLBUILD)
-/* define DLLBUILD when building the DLL */
-#  define MODBUS_API __declspec(dllexport)
-# else
-#  define MODBUS_API __declspec(dllimport)
-# endif
-#else
+// #if defined(_MSC_VER)
+// # if defined(DLLBUILD)
+// /* define DLLBUILD when building the DLL */
+// #  define MODBUS_API __declspec(dllexport)
+// # else
+// # define MODBUS_API
+// # endif
+// #else
 # define MODBUS_API
-#endif
+// #endif
 
 #ifdef  __cplusplus
 # define MODBUS_BEGIN_DECLS  extern "C" {
